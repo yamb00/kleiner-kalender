@@ -28,7 +28,7 @@ type Event struct {
 	Location string
 }
 
-func Newclient(config Config) *Client {
+func NewClient(config Config) *Client {
 	if config.baseUrl == "" {
 		config.baseUrl = "https://www.kleiner-kalender.de"
 	}
@@ -66,7 +66,7 @@ func parseEventPage(event *Event) error {
 	return nil
 }
 
-func (client Client) getEventsByDate(date time.Time) (events []*Event, _ error) {
+func (client Client) GetEventsByDate(date time.Time) (events []*Event, _ error) {
 	formatedDate := date.Format("2006-01-02")
 	formatedUrl := fmt.Sprintf("%s/kalender/%s.html", client.config.baseUrl, formatedDate)
 	urlParsed, err := url.Parse(formatedUrl)
