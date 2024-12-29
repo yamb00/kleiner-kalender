@@ -1,4 +1,4 @@
-module kleiner-kalender
+module github.com/yamb00/kleiner-kalender
 
 go 1.23.1
 
