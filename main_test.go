@@ -95,8 +95,8 @@ func TestEventsByDate(t *testing.T) {
 	}
 	for _, tc := range testCasesEventsByDate {
 		t.Run(tc.name, func(t *testing.T) {
-			client := Newclient(tc.config)
-			output, err := client.getEventsByDate(tc.date)
+			client := NewClient(tc.config)
+			output, err := client.GetEventsByDate(tc.date)
 			// printEvnets(output)
 			switch {
 			case tc.expectedError != "":
